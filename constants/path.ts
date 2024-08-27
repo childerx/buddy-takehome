@@ -1,0 +1,10 @@
+export const HOME = "/";
+export const ABOUT = "/about";
+export const GALLERY = "/gallery";
+export const TEAM = "/team";
+export const ADMISSION = "/admission";
+export const NEWS_LETTER = "/news-letter";
+export const CAREER = "/career";
+export const CONTACT = "/contact";
+export const FAQ = "/faqs";
+export const DASHBOARD = "/dashboard";
