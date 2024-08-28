@@ -50,7 +50,7 @@ export default function Nav() {
                 </li>
               ))}
             </ul>
-            <div className="bg-red-600 p-1 cursor-pointer">
+            <div className="p-1 cursor-pointer">
               <RiSearchLine className="w-6 h-6 text-black" aria-hidden="true" />
             </div>
           </div>
