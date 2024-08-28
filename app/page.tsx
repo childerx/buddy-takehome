@@ -14,6 +14,7 @@ import { IoArrowForwardSharp } from "react-icons/io5";
 import { headerSlide, latest, whyUs } from "@/constants/data";
 import Count from "./components/count";
 import Button from "./components/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -82,7 +83,9 @@ export default function Home() {
           ))}
         </div>
 
-        <Button title="Enroll your ward now" />
+        <Link href="/dashboard">
+          <Button title="Enroll your ward now" />
+        </Link>
       </section>
 
       <section className="w-full bg-white py-12 flex flex-col items-center">
