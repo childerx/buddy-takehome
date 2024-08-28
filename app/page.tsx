@@ -15,6 +15,7 @@ import { headerSlide, latest, whyUs } from "@/constants/data";
 import Count from "./components/count";
 import Button from "./components/button";
 import Link from "next/link";
+import { DASHBOARD } from "@/constants/path";
 
 export default function Home() {
   return (
@@ -90,7 +91,7 @@ export default function Home() {
           ))}
         </div>
 
-        <Link href="/dashboard">
+        <Link href={DASHBOARD}>
           <Button title="Enroll your ward now" />
         </Link>
       </section>
@@ -270,7 +271,9 @@ export default function Home() {
             </div>
           </div>
 
-          <Button title="Enroll your ward now" />
+          <Link className="relative z-10" href={DASHBOARD}>
+            <Button title="Enroll your ward now" />
+          </Link>
           <div className="w-full mobile:mt-4 max-w-xl mx-auto flex justify-between items-center">
             <div className="lg:w-40">
               <Image
