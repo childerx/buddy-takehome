@@ -35,19 +35,24 @@ export default function Footer() {
   return (
     <>
       {!pathname.includes("dashboard") && (
-        <footer className="w-full py-10 bg-black text-white px-10">
-          <div className="w-full border-b-[0.5px] pb-5 border-white flex justify-between items-start">
+        <footer className="w-full py-10 bg-black text-white mobile:px-4 px-10">
+          <div className="w-full border-b-[0.5px] pb-5 border-white flex gap-5 flex-wrap justify-between mobile:justify-center items-start">
             <div className="">
-              <Link href={HOME} className="font-semibold italic text-2xl">
+              <Link
+                href={HOME}
+                className="font-semibold italic mobile:text-xl text-2xl"
+              >
                 deutscheinternationalschool
               </Link>
-              <p className="">Building Future Leaders.</p>
+              <p className="mobile:text-sm">Building Future Leaders.</p>
             </div>
             <div className="">
-              <h4 className="font-semibold text-xl mb-2">Quick Links</h4>
+              <h4 className="font-semibold mobile:text-base text-xl mb-2">
+                Quick Links
+              </h4>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
                 {quickLinks.map(({ href, label }) => (
-                  <li key={href}>
+                  <li className="mobile:text-sm" key={href}>
                     <Link href={href}>{label}</Link>
                   </li>
                 ))}
@@ -55,22 +60,29 @@ export default function Footer() {
             </div>
 
             <div className="">
-              <h4 className="font-semibold text-xl mb-2">
+              <h4 className="font-semibold mobile:text-base text-xl mb-2">
                 Contact Information
               </h4>
               <div className="flex items-center gap-2 mb-2">
                 <HiOutlineMail className="w-5 h-5 " aria-hidden="true" />
-                <Link href={`mailto: deutscheinternationalschool@gmail.com`}>
+                <Link
+                  className="mobile:text-sm"
+                  href={`mailto: deutscheinternationalschool@gmail.com`}
+                >
                   deutscheinternationalschool@gmail.com
                 </Link>
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <BsTelephone className="w-5 h-5 " aria-hidden="true" />
-                <Link href={`tel: 233245679328`}>+233245679328</Link>
+                <Link className="mobile:text-sm" href={`tel: 233245679328`}>
+                  +233245679328
+                </Link>
               </div>
               <div className="flex items-center gap-2 mb-4">
                 <GrLocation className="w-5 h-5 " aria-hidden="true" />
-                <span>Asamankese, near the Pentecost church</span>
+                <span className="mobile:text-sm">
+                  Asamankese, near the Pentecost church
+                </span>
               </div>
 
               <div className="bg-white pl-4 pr-0.5 py-0.5 flex items-center w-full rounded-full">
@@ -87,7 +99,8 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="flex justify-between items-center mt-4">
+
+          <div className="flex justify-between mobile:justify-center mobile:flex-col items-center mt-4 gap-5">
             <p className="text-white mobile:text-sm mobile:text-center text-base mobile:mt-6">
               {" "}
               &copy; {new Date().getFullYear()}{" "}
@@ -97,7 +110,7 @@ export default function Footer() {
               All rights reserved. Designed and developed by Degriti
             </p>
 
-            <div className="font-normal flex items-center gap-4">
+            <div className="font-normal flex flex-wrap mobile:justify-center items-center gap-4 text-nowrap mobile:text-sm">
               <Link href={"#"}>Privacy Policy</Link>
               <Link href={"#"}>Terms and Conditions</Link>
               <Link href={"#"}>Cookies Policies</Link>

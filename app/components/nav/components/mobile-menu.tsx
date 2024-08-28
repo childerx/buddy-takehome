@@ -4,7 +4,6 @@ import * as React from "react";
 import { useRef } from "react";
 import { motion, sync, useCycle } from "framer-motion";
 
-import "./styles.css";
 import { useDimensions } from "./use-dimensions";
 import { Navigation } from "./navigation";
 import { MenuToggle } from "./menu-toggle";
@@ -40,8 +39,12 @@ export const MobileMenu = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
+      className="absolute z-50 top-0 left-0 bottom-0 w-[300px] "
     >
-      <motion.div className="background" variants={sidebar} />
+      <motion.div
+        className="absolute top-0 left-0 bottom-0 w-[300px] bg-white flex justify-center items-center"
+        variants={sidebar}
+      />
       <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>

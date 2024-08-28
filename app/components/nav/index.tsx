@@ -29,21 +29,28 @@ export default function Nav() {
   return (
     <>
       {!pathname.includes("dashboard") && (
-        <nav className="w-full flex justify-between items-center gap-10 px-10 bg-white text-black h-16">
-          {/* <MobileMenu /> */}
+        <nav className="w-full flex justify-between items-center gap-5 lg:gap-10 px-4 lg:px-10 bg-white text-black h-16">
+          <div className="sm:hidden">
+            <MobileMenu />
+            </div>
 
           <div className="">
-            <Link href={HOME} className="font-semibold italic text-2xl">
+            <Link
+              href={HOME}
+              className="font-semibold italic text-lg lg:text-2xl"
+            >
               deutscheinternationalschool
             </Link>
           </div>
-          <div className="flex items-center gap-6">
-            <ul className="flex items-center gap-6">
+          <div className="hidden sm:flex items-center gap-3 lg:gap-6">
+            <ul className="flex items-center gap-3 lg:gap-6">
               {links.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`text-base ${pathname === href && "font-bold"}`}
+                    className={`sm:text-xs md:text-sm lg:text-base ${
+                      pathname === href && "font-bold"
+                    }`}
                   >
                     {label}
                   </Link>
@@ -51,7 +58,10 @@ export default function Nav() {
               ))}
             </ul>
             <div className="p-1 cursor-pointer">
-              <RiSearchLine className="w-6 h-6 text-black" aria-hidden="true" />
+              <RiSearchLine
+                className="w-5 h-5 md:w-6 md:h-6 text-black"
+                aria-hidden="true"
+              />
             </div>
           </div>
         </nav>
