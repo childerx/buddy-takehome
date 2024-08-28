@@ -9,7 +9,7 @@ export default function Button({ title, onClick }: ButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-2 px-4 py-2.5 bg-black text-white rounded-[10px]"
+      className="font-gilroy-bold flex items-center gap-2 px-4 py-2.5 bg-black text-white rounded-[10px]"
     >
       <span>{title}</span>
       <IoArrowForwardSharp className="" aria-hidden="true" />

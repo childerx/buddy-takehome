@@ -40,14 +40,16 @@ export default function Footer() {
             <div className="">
               <Link
                 href={HOME}
-                className="font-semibold italic mobile:text-xl text-2xl"
+                className="font-gilroy-bold font-semibold italic mobile:text-xl text-2xl"
               >
                 deutscheinternationalschool
               </Link>
-              <p className="mobile:text-sm">Building Future Leaders.</p>
+              <p className="font-gilroy-regular mobile:text-sm">
+                Building Future Leaders.
+              </p>
             </div>
-            <div className="">
-              <h4 className="font-semibold mobile:text-base text-xl mb-2">
+            <div className="font-gilroy-regular">
+              <h4 className="font-gilroy-bold font-semibold mobile:text-base text-xl mb-2">
                 Quick Links
               </h4>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
@@ -59,8 +61,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="">
-              <h4 className="font-semibold mobile:text-base text-xl mb-2">
+            <div className="font-gilroy-regular">
+              <h4 className="font-gilroy-bold font-semibold mobile:text-base text-xl mb-2">
                 Contact Information
               </h4>
               <div className="flex items-center gap-2 mb-2">
@@ -100,11 +102,14 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex justify-between mobile:justify-center mobile:flex-col items-center mt-4 gap-5">
+          <div className="font-gilroy-regular flex justify-between mobile:justify-center mobile:flex-col items-center mt-4 gap-5">
             <p className="text-white mobile:text-sm mobile:text-center text-base mobile:mt-6">
               {" "}
               &copy; {new Date().getFullYear()}{" "}
-              <Link href={HOME} className="font-semibold italic">
+              <Link
+                href={HOME}
+                className="font-gilroy-bold font-semibold italic"
+              >
                 deutscheinternationalschool
               </Link>{" "}
               All rights reserved. Designed and developed by Degriti

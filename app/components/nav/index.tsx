@@ -54,7 +54,7 @@ export default function Nav() {
           <div>
             <Link
               href={HOME}
-              className="font-semibold italic text-lg lg:text-2xl"
+              className="font-gilroy-bold font-semibold italic text-lg lg:text-2xl"
             >
               deutscheinternationalschool
             </Link>
@@ -66,7 +66,9 @@ export default function Nav() {
                   <Link
                     href={href}
                     className={`sm:text-xs md:text-sm lg:text-base ${
-                      pathname === href && "font-bold"
+                      pathname === href
+                        ? "font-gilroy-bold font-bold"
+                        : "font-gilroy-regular"
                     }`}
                   >
                     {label}

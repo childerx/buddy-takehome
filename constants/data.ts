@@ -20,7 +20,7 @@ export const whyUs = [
     image: books,
   },
   {
-    title: "State-of-the-art Facilities",
+    title: "State-of-the-Art Facilities",
     description:
       "Our school is equipped with modern and innovative facilities, including science and computer labs, libraries, sports grounds, and more. These facilities provide students with the tools they need to excel in their studies and develop their talents.",
     image: office,

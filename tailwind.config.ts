@@ -16,6 +16,11 @@ const config: Config = {
       screens: {
         mobile: { max: "635px" },
       },
+      fontFamily: {
+        "gilroy-bold": ["Gilroy-Bold", "sans-serif"],
+        "gilroy-regular": ["Gilroy-Regular", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
+      },
     },
   },
   plugins: [],

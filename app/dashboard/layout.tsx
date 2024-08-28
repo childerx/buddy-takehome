@@ -62,8 +62,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <div
                   className={`group flex items-center px-4 py-2 text-base font-medium rounded-full w-full text-left ${
                     pathname === tab.href
-                      ? "bg-[#E6DFFC] text-[#4220AE]"
-                      : "text-gray-600 hover:bg-gray-50"
+                      ? "bg-[#E6DFFC] text-[#4220AE] font-gilroy-bold"
+                      : "text-[#333342] hover:bg-gray-50 font-gilroy-regular"
                   }`}
                 >
                   <span className="mr-4">{tab.icon}</span>
@@ -126,7 +126,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <FiMenu className="h-6 w-6" />
             </button>
           </div>
-          <div className="border border-black flex items-center gap-2 mobile:px-4 mobile:py-2 px-6 py-3 rounded-2xl">
+          <div className="font-gilroy-regular border border-black flex items-center gap-2 mobile:px-4 mobile:py-2 px-6 py-3 rounded-2xl">
             <TbWorldWww className="w-5 h-5 text-[#333342]" aria-hidden="true" />
             <span className="font-medium mobile:text-sm text-base text-black">
               Visit Wesbsite

@@ -14,7 +14,7 @@ export default function Count() {
   }, []);
 
   return (
-    <div className="flex items-center font-semibold mobile:text-3xl text-5xl ">
+    <div className="font-sora flex items-center font-semibold mobile:text-3xl text-5xl ">
       <motion.h1 className="">{rounded}</motion.h1>
       <span>+</span>
     </div>

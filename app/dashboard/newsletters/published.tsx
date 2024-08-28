@@ -35,10 +35,10 @@ export default function Published() {
         >
           <div className="flex mobile:flex-col justify-between items-start gap-5 mb-4">
             <div>
-              <h4 className="font-bold text-2xl mobile:text-lg text-[#292929] mb-2">
+              <h4 className="font-gilroy-bold font-bold text-2xl mobile:text-lg text-[#292929] mb-2">
                 Lorem ipsum dolor sit amet consectetur.
               </h4>
-              <p className="text-[#171617] mobile:text-sm">
+              <p className="font-gilroy-regular text-[#171617] mobile:text-sm">
                 Lorem ipsum dolor sit amet consectetur. Pharetra enim cras lorem
                 ac proin. Augue mauris aliquet ac sodales sit. Penatibus ac odio
                 hendrerit posuere pharetra integer aliquet. Commodo donec
@@ -67,7 +67,7 @@ export default function Published() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="absolute -bottom-28 -right-24 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-20"
+                className="font-gilroy-regular absolute -bottom-28 -right-24 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-20"
               >
                 <div
                   className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100"
