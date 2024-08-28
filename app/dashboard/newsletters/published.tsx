@@ -33,12 +33,12 @@ export default function Published() {
           key={index}
           className="w-full max-w-2xl py-5 px-2 mb-4 border-b-[0.5px] border-[#919EAB52]"
         >
-          <div className="flex justify-between mb-4">
+          <div className="flex mobile:flex-col justify-between items-start gap-5 mb-4">
             <div>
-              <h4 className="font-bold text-2xl text-[#292929] mb-2">
+              <h4 className="font-bold text-2xl mobile:text-lg text-[#292929] mb-2">
                 Lorem ipsum dolor sit amet consectetur.
               </h4>
-              <p className="text-[#171617]">
+              <p className="text-[#171617] mobile:text-sm">
                 Lorem ipsum dolor sit amet consectetur. Pharetra enim cras lorem
                 ac proin. Augue mauris aliquet ac sodales sit. Penatibus ac odio
                 hendrerit posuere pharetra integer aliquet. Commodo donec
@@ -46,7 +46,7 @@ export default function Published() {
               </p>
             </div>
             <Image
-              className="object-contain"
+              className="object-contain "
               src={opt.image}
               alt="Logo"
               width={164}

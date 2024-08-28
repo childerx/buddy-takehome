@@ -33,7 +33,7 @@ export default function Nav() {
           {/* <MobileMenu /> */}
 
           <div className="">
-            <Link href={HOME} className="font-semibold italic font-2xl">
+            <Link href={HOME} className="font-semibold italic text-2xl">
               deutscheinternationalschool
             </Link>
           </div>

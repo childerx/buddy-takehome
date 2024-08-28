@@ -3,15 +3,19 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiBell, FiLogOut, FiMenu } from "react-icons/fi";
-import { FaUserCircle } from "react-icons/fa";
-import { MdEmail, MdPeople, MdAnalytics, MdLogout } from "react-icons/md";
+import { FiBell, FiMenu } from "react-icons/fi";
 import { TbEdit } from "react-icons/tb";
 import { TbWorldWww } from "react-icons/tb";
+import { HiOutlineUsers } from "react-icons/hi2";
+import { LuFileSpreadsheet } from "react-icons/lu";
+import { MdOutlineAnalytics } from "react-icons/md";
+import { TbLogout } from "react-icons/tb";
+
 import profile from "@/public/profile.png";
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { HOME } from "@/constants/path";
 
 const tabs = [
   {
@@ -21,22 +25,22 @@ const tabs = [
   },
   {
     name: "Newsletters",
-    icon: <MdEmail className="w-5 h-5" aria-hidden="true" />,
+    icon: <LuFileSpreadsheet className="w-5 h-5" aria-hidden="true" />,
     href: "/dashboard/newsletters",
   },
   {
     name: "Subscribers",
-    icon: <MdPeople className="w-5 h-5" aria-hidden="true" />,
+    icon: <HiOutlineUsers className="w-5 h-5" aria-hidden="true" />,
     href: "/dashboard/subscribers",
   },
   {
     name: "Analytics",
-    icon: <MdAnalytics className="w-5 h-5" aria-hidden="true" />,
+    icon: <MdOutlineAnalytics className="w-5 h-5" aria-hidden="true" />,
     href: "/dashboard/analytics",
   },
   {
     name: "Logout",
-    icon: <MdLogout className="w-5 h-5" aria-hidden="true" />,
+    icon: <TbLogout className="w-5 h-5" aria-hidden="true" />,
     href: "/dashboard/logout",
   },
 ];
@@ -50,12 +54,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className="hidden md:flex flex-col w-64 bg-white fixed h-full">
+      <div className="hidden md:flex flex-col w-full max-w-64 bg-white fixed h-full">
         <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
-          <div className="flex items-center flex-shrink-0 px-4 mb-5">
-            {/* <h1 className="text-xl font-bold">Dashboard</h1> */}
-          </div>
-          <nav className="flex-1 flex flex-col px-2 space-y-2 mt-14">
+          <nav className="flex-1 flex flex-col px-8 space-y-2 mt-24">
             {tabs.map((tab) => (
               <Link href={tab.href} key={tab.name} passHref>
                 <div
@@ -79,14 +80,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         initial={{ x: "-100%" }}
         animate={{ x: isMobileMenuOpen ? "0%" : "-100%" }}
         transition={{ type: "tween" }}
-        className="fixed inset-0 z-40 flex md:hidden"
+        className="fixed inset-0 z-40 flex md:hidden bg-black bg-opacity-30"
       >
-        <div className="flex-1 flex flex-col max-w-xs w-full bg-white">
+        <div className="flex-1 flex flex-col max-w-sm w-full bg-white">
           <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
-            <div className="flex items-center flex-shrink-0 px-4 mb-5">
-              <h1 className="text-xl font-bold">Dashboard</h1>
+            <div className="px-2">
+              <Link href={HOME} className="font-semibold italic">
+                deutscheinternationalschool
+              </Link>
             </div>
-            <nav className="flex-1 px-2 space-y-1">
+            <nav className="flex-1 flex flex-col px-2 space-y-3 mt-12">
               {tabs.map((tab) => (
                 <Link href={tab.href} key={tab.name} passHref>
                   <div
@@ -106,7 +109,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
         <div
-          className="fixed inset-0 flex-grow bg-black bg-opacity-50"
+          className="flex-grow "
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>
       </motion.div>
@@ -114,7 +117,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Main Content */}
       <div className="flex flex-col flex-1 md:ml-64">
         {/* Top Navbar */}
-        <div className="sticky top-0 z-10 flex items-center justify-between bg-white px-4 py-4 ">
+        <div className="sticky top-0 z-10 flex items-center justify-between bg-white px-8 mobile:px-4 py-4 ">
           <div className="flex items-center">
             <button
               className="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
@@ -123,9 +126,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <FiMenu className="h-6 w-6" />
             </button>
           </div>
-          <div className="border border-black flex items-center gap-2 px-6 py-3 rounded-2xl">
+          <div className="border border-black flex items-center gap-2 mobile:px-4 mobile:py-2 px-6 py-3 rounded-2xl">
             <TbWorldWww className="w-5 h-5 text-[#333342]" aria-hidden="true" />
-            <span className="font-medium text-base text-black">
+            <span className="font-medium mobile:text-sm text-base text-black">
               Visit Wesbsite
             </span>
           </div>
@@ -177,7 +180,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* Page Content */}
-        <main className="flex-1 p-10 bg-white">{children}</main>
+        <main className="flex-1 pl-6 pr-10 py-8 mobile:px-4 bg-white">
+          {children}
+        </main>
       </div>
     </div>
   );

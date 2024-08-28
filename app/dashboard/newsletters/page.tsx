@@ -20,11 +20,13 @@ export default function page() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   return (
     <section>
-      <div className="w-full flex justify-between items-center mb-10">
-        <h4 className="font-bold text-2xl text-black">Newsletters</h4>
+      <div className="w-full flex justify-between items-center mb-6">
+        <h4 className="font-bold mobile:text-lg text-2xl text-black">
+          Newsletters
+        </h4>
         <button
-          className="w-48 h-11 rounded-lg bg-[#582BE8] flex justify-center items-center text-white 
-        font-semibold "
+          className="w-48 mobile:w-40 h-11 mobile:h-9 rounded-lg bg-[#582BE8] flex justify-center items-center text-white 
+        font-semibold mobile:text-sm"
         >
           New Post
         </button>
@@ -35,7 +37,7 @@ export default function page() {
             <li
               key={item.label}
               className={`${item === selectedTab ? "text-[#582BE8]" : ""}
-              rounded-md py-3 px-4 relative cursor-pointer h-6  min-w-0 select-none`}
+              rounded-md mobile:text-sm py-3  relative cursor-pointer h-6  min-w-0 select-none`}
               onClick={() => setSelectedTab(item)}
             >
               {`${item.label}`}
@@ -58,7 +60,7 @@ export default function page() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {selectedTab ? selectedTab.content : "😋"}
+            {selectedTab ? selectedTab.content : ""}
           </motion.div>
         </AnimatePresence>
       </main>
